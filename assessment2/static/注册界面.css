@@ -1,0 +1,464 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+body {
+    transition: all 3s;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+
+
+input {
+    font-size: 1.4em;
+    height: 2.0em;
+    border-radius: 5px;
+    border: 1px solid #c8cccf;
+    color: white;
+    outline: 0;
+    text-align: center;
+}
+
+
+
+/* 全局大版型 */
+.register-big-box {
+
+    display: none;
+
+    width: 40rem;
+    height: 40rem;
+    position: fixed;
+    top: 40%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+}
+
+.register-mail-number-submit {
+    position: absolute;
+    font-size: 0.2rem;
+    right: 0.5rem;
+    top: 2.8rem;
+    border: white dashed 1px;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    color: white;
+}
+
+.register-mail-number-submit:hover {
+    background-color: white;
+    border: black dashed 1px;
+    color: black;
+}
+
+
+.register-picture-chose-img-box {
+    display: none;
+    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    transition: all 1.5s;
+}
+
+.register-picture-chose-img {
+    height: 25%;
+    width: 25%;
+    padding: 3px;
+    margin: 3px;
+    border: 1px dashed white;
+    cursor: pointer;
+    z-index: 999;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.register-picture-chose-img-back {
+    width: 10%;
+    padding: 3px;
+    margin: 3px;
+    opacity: 0;
+    transform: translateX(103%);
+    text-align: center;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.register-picture-chose-img-mouseenter {
+    opacity: 0.5;
+}
+
+
+.register-title {
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.8rem;
+    border: 1px dashed white;
+    text-align: center;
+}
+
+.register-input {
+    padding: 3rem 0px 3rem 0px;
+    border: 1px dashed white;
+}
+
+
+
+.register-input label {
+    line-height: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+}
+
+.register-input-read-agree {
+    position: absolute;
+    right: 22%;
+    bottom: 67%;
+    color: rgb(135,135,135);
+}
+
+
+.register-button-submit {
+    height: 3.2rem;
+    width: 16rem;
+    background-color: rgb(253, 254, 253);
+    color: black;
+    border: 0.1rem solid white;
+    border-radius: 1rem;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.picture-chose-button-mouseenter {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* 注册之前移来 */
+
+@keyframes register-input-left-before {
+    0% {
+        transform: scale(1.2);
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+}
+
+@keyframes register-input-right-before {
+    0% {
+        transform: scale(1.2);
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+}
+
+
+.register-input-left-before-animation {
+    animation: register-input-left-before 2.5s forwards;
+}
+
+.register-input-right-before-animation {
+    animation: register-input-right-before 2.5s forwards;
+}
+
+@keyframes register-checkbox-before {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+
+.register-checkbox-before-animation {
+    animation: register-checkbox-before 2.5s forwards;
+}
+
+
+@keyframes register-title-before {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.register-title-before-animation {
+    animation: register-title-before 2.5s forwards;
+}
+
+@keyframes register-picture-chose-img-before {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.register-picture-chose-img-before-animation {
+    animation: register-picture-chose-img-before 2.5s forwards;
+}
+
+/* 选择之后移走 */
+
+@keyframes register-input-left-after {
+    100% {
+        transform: scale(1.2);
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+}
+
+@keyframes register-input-right-after {
+    100% {
+        transform: scale(1.2);
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+}
+
+
+.register-input-left-after-animation {
+    animation: register-input-left-after 2.5s forwards;
+}
+
+.register-input-right-after-animation {
+    animation: register-input-right-after 2.5s forwards;
+}
+
+@keyframes register-checkbox-after {
+    100% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+
+.register-checkbox-after-animation {
+    animation: register-checkbox-after 2.5s forwards;
+}
+
+
+@keyframes register-title-after {
+    100% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+
+.register-title-after-animation {
+    animation: register-title-after 2.5s forwards;
+}
+
+@keyframes register-picture-chose-img-after {
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+.register-picture-chose-img-after-animation {
+    animation: register-picture-chose-img-after 2.5s forwards;
+}
+
+@keyframes register-picture-chose-img-back-move-1 {
+    0% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-15%);
+    }
+}
+
+@keyframes register-picture-chose-img-back-move-2 {
+    0% {
+        opacity: 1;
+        transform: translateX(-15%);
+    }
+
+    100% {
+        opacity: 0;
+
+    }
+}
+
+@keyframes register-picture-chose-img-back-move-3 {
+    0% {
+        opacity: 1;
+        transform: translateX(-15%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-100%);
+    }
+}
+
+.register-picture-chose-img-back-move-animation-1 {
+    animation: register-picture-chose-img-back-move-1 1.5s forwards;
+}
+
+.register-picture-chose-img-back-move-animation-2 {
+    animation: register-picture-chose-img-back-move-2 1.5s forwards;
+}
+
+.register-picture-chose-img-back-move-animation-3 {
+    animation: register-picture-chose-img-back-move-3 2.5s forwards;
+}
+
+/* 注册完毕 */
+
+.register-complete-big-box {
+
+    display: none;
+
+    width: 40rem;
+    height: 40rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.register-complete-h1 {
+    font-size: 5rem;
+    border: 1px dashed white;
+    padding: 2rem;
+}
+
+.register-complete-small-box {
+    padding: 3rem;
+    border: 1px dashed white;
+}
+
+.register-complete-return-button {
+    height: 3.2rem;
+    width: 16rem;
+    background-color: rgb(253, 254, 253);
+    color: black;
+    border: 0.1rem solid white;
+    border-radius: 1rem;
+    opacity: 0.5;
+    cursor: pointer;
+    border: 1px dashed white;
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+}
+
+.register-complete-return-button-mouseenter {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.register-complete-automatic-return {
+    padding: 3rem;
+    font-size: 2rem;
+    border: 1px dashed white;
+}
+
+@keyframes register-complete-big-box-before {
+    0% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.register-complete-big-box-before-animation {
+    animation: register-complete-big-box-before 2.5s forwards;
+}
+
+@keyframes register-complete-big-box-after {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.register-complete-big-box-after-animation {
+    animation: register-complete-big-box-after 2.5s forwards;
+}
+
+@keyframes register-complete-h1-before {
+    0% {
+        transform: translateX(-100%);
+
+    }
+
+    100% {}
+}
+
+.register-complete-h1-before-animation {
+    animation: register-complete-h1-before 2.5s forwards;
+}
+
+@keyframes register-complete-h1-after {
+    0% {}
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.register-complete-h1-after-animation {
+    animation: register-complete-h1-after 2.5s forwards;
+}
+
+
+@keyframes register-complete-automatic-return-before {
+    0% {
+        transform: translateX(100%);
+
+    }
+
+    100% {}
+}
+
+.register-complete-automatic-return-before-animation {
+    animation: register-complete-automatic-return-before 2.5s forwards;
+}
+
+@keyframes register-complete-automatic-return-after {
+    0% {}
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.register-complete-automatic-return-after-animation {
+    animation: register-complete-automatic-return-after 2.5s forwards;
+}

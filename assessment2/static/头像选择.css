@@ -1,0 +1,173 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+/* 图片选择大盒子居中 */
+.picture-chose-big-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: all 1.5s;
+    font-size: 1.6rem;
+}
+
+.picture-chose-h2 {
+    color: white;
+    font-size: 2.4rem;
+}
+
+.picture-chose-small-box {
+    text-align: center;
+    transition: all 1.5s;
+    font-size: 1.6rem;
+}
+
+.picture-chose-img {
+    height: 20%;
+    width: 20%;
+    padding: 3px;
+    margin: 3px;
+    border: 1px solid white;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.picture-chose-button {
+    height: 3.2rem;
+    width: 16rem;
+    background-color: rgb(253, 254, 253);
+    border: 0.16rem solid white;
+    border-radius: 1.6rem;
+    cursor: pointer;
+    opacity: 0.5;
+    color: black;
+}
+
+/* 鼠标放上的效果 */
+.picture-chose-mouseenter {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* 鼠标点击的效果 */
+.picture-chose-click {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.picture-chose-button-mouseenter {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes picture-h2-before {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.picture-h2-before-animation {
+    animation: picture-h2-before 2s forwards;
+}
+
+@keyframes picture-chose-img-before-left {
+    0% {
+        transform: scale(1.2);
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+}
+
+@keyframes picture-chose-img-before-right {
+    0% {
+        transform: scale(1.2);
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+}
+
+.picture-chose-img-before-left-animation {
+    animation: picture-chose-img-before-left 2s forwards;
+}
+
+.picture-chose-img-before-right-animation {
+    animation: picture-chose-img-before-right 2s forwards;
+}
+
+@keyframes picture-chose-button-before {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+
+.picture-chose-button-before-animation {
+    animation:picture-chose-button-before 2s forwards;
+}
+
+
+@keyframes h2-chose {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+
+@keyframes button-chose {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+
+@keyframes picture-be-chose {
+    0% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+}
+
+@keyframes picture-not-chose {
+    0% {}
+
+    100% {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+}
+
+.button-chose-animation {
+    animation: button-chose 1.5s forwards;
+}
+
+.h2-chose-animation {
+    animation: h2-chose 1.5s forwards;
+}
+
+.picture-be-chose-animation {
+    animation: picture-be-chose 1.5s forwards;
+}
+
+.picture-not-chose-animation {
+    animation: picture-not-chose 1.5s forwards;
+}

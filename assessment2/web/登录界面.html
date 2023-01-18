@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录界面</title>
+
+    <link rel="shortcut icon" href="/图片/知乎icon.ico" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="/static/登录界面.css">
+    <!-- js -->
+    <script src="/static/登录界面.js"></script>
+</head>
+
+<body>
+    <!-- 顶部登陆图标 -->
+    <div class="login-logo">
+        <img src="/图片/知乎登录图标.png" alt="">
+    </div>
+
+    <!-- 登录界面 -->
+    <div class="login-big-box">
+        <div class="login-title">
+            登录
+        </div>
+        <video src="/图片/登录界面插画.mp4" autoplay muted loop class="login-video"></video>
+        <form action="/api/v1/user/login" method="post">
+            <ul>
+                <li class="login-input">
+                    <label for="login-usernumber">账号：
+                        <input type="text" placeholder="请输入账号" id="login-usernumber" class="login-usernumber" required
+                            autocomplete="off">
+                    </label>
+                </li>
+                <li class="login-input">
+                    <label for="login-password">密码：
+                        <input type="password" placeholder="请输入密码" id="login-password" class="login-password" required
+                            autocomplete="off">
+                    </label>
+                    <img src="/图片/不可见.png" class="login-password-display-or-not" alt="密码不可见">
+                </li>
+                <li class="login-input login-input-read-agree">
+                    登录即代表已阅读并同意<a href="Javascript:;">《用户守则》</a>
+                </li>
+                <li class="login-input">
+                    <div id="login-button" class="login-button">
+                        <input type="submit" value="登录" id="login-button-submit" class="login-button-submit">
+                        <a href="/api/v1/user/register" class="go-to-register">立即注册!</a>
+                    </div>
+                </li>
+
+            </ul>
+        </form>
+    </div>
+
+    <!-- 底部信息 -->
+    <div class="login-bottom">
+        <div>
+            <a href="javascript:;">知乎专栏</a>
+            <a href="javascript:;">圆桌</a>
+            <a href="javascript:;">发现</a>
+            <a href="javascript:;">移动应用</a>
+            <a href="javascript:;">联系我们</a>
+            <a href="javascript:;">来知乎工作</a>
+            <a href="javascript:;">注册机构号</a>
+            <a href="javascript:;">Investor Relations</a>
+        </div>
+        <div>
+            <span >© 2023 知乎</span>
+            <a href="javascript:;">京 ICP 证 110745 号</a>
+            <a href="javascript:;">京 ICP 备 13052560 号 - 1</a>
+            <img src="/图片/公安.png" alt="">
+            <a href="javascript:;">京公网安备 11010802020088 号</a>
+            <a href="javascript:;">京网文[2022]2674-081 号</a>
+            <a href="javascript:;">出版物经营许可证</a>
+            <a href="javascript:;">药品医疗器械网络信息服务备案（京）网药械信息备字（2022）第00334号</a>
+        </div>
+        <div>
+            <a href="javascript:;">侵权举报</a>
+            <a href="javascript:;">网上有害信息举报专区</a>
+            <a href="javascript:;">儿童色情信息举报专区</a>
+            <a href="javascript:;">互联网算法推荐举报专区</a>
+            <span>违法和不良信息举报：010-82716601</span>
+            <a href="javascript:;">举报邮箱：jubao@zhihu.com</a>
+        </div>
+        <div>
+            <img src="/图片/适老化无障碍服务.png" width="80" height="38" style="margin: 2rem 0 2rem 0;" alt="">
+        </div>
+    </div>
+   
+</body>
+
+</html>

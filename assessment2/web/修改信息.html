@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 10px;
+        }
+
+        
+body {
+    background-color: rgb(246, 246, 246);
+}
+        input {
+            font-size: 1.4em;
+            height: 2em;
+            border-radius: 5px;
+            border: 1px solid black;
+            outline: 0;
+            text-align: center;
+        }
+
+        .modify-big-box {
+            width: 40rem;
+            height: 40rem;
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .modify-title {
+            height: 4rem;
+            line-height: 4rem;
+            font-size: 1.8rem;
+            text-align: center;
+            border: 1px dashed black;
+            border-radius: 5px;
+        }
+
+        .modify-input label {
+            line-height: 2rem;
+            height: 2rem;
+            font-size: 1rem;
+        }
+
+        .modify-input {
+            padding: 3rem 0px 3rem 0px;
+            border: 1px dashed black;
+            border-radius: 5px;
+        }
+
+        .modify-mail-number-submit {
+            position: absolute;
+            font-size: 0.2rem;
+            right: 0rem;
+            top: 3rem;
+            border: 0.1rem solid rgb(124, 127, 130);
+            height: 3rem;
+            line-height: 3rem;
+            text-align: center;
+
+        }
+
+        .modify-button-submit {
+            height: 3.2rem;
+            width: 16rem;
+            background-color: rgb(240, 246, 254);
+            color: black;
+            border: 0.1rem solid black;
+            border-radius: 1rem;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="modify-big-box">
+        <div class="modify-title">修改账号</div>
+
+        <form action="">
+            <div class="modify-input">
+                <label for="modify-usernumber">修改账号：</label>
+                <input type="text" placeholder="修改账号" id="modify-usernumber" class="modify-usernumber"
+                    autocomplete="off">
+            </div>
+            <div class="modify-input">
+                <label for="modify-password">修改密码：</label>
+                <input type="password" placeholder="修改密码" id="modify-password" class="modify-password"
+                    autocomplete="off">
+            </div>
+            <div class="modify-input" style="position: relative;">
+                <label for="modify-mail-number">邮箱号~：</label>
+                <input type="email" placeholder="请输入注册时的邮箱号" id="modify-mail-number" class="modify-mail-number" required
+                    autocomplete="off">
+                <input type="submit" class="modify-mail-number-submit" value="发送验证码">
+            </div>
+            <div class="modify-input">
+                <label for="modify-security-code">验证码~：</label>
+                <input type="text" placeholder="请输入邮箱验证码" id="modify-security-code" class="modify-security-code"
+                    required autocomplete="off">
+            </div>
+            <div class="modify-input modify-checkbox ">
+                <input type="submit" value="修改" id="modify-button-submit" class="modify-button-submit">
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>

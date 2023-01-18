@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>写文章</title>
+    <link rel="shortcut icon" href="/图片/知乎icon.ico" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            background-color: rgb(246, 246, 246);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 26px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed rgb(133, 144, 166);
+        }
+
+        textarea {
+            resize: none;
+            outline: none;
+            width: 100%;
+            border: none;
+        }
+
+        .write-article {
+            width: 800px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 0 20px;
+            background: #FFFFFF;
+            margin-top: 20px;
+        }
+
+        .write-article-title {
+            height: 44px;
+            font-size: 32px;
+            font-weight: 600;
+            height: 44px;
+            line-height: 1.4;
+            padding: 10px 0px 10px 0px;
+            border-bottom: 1px solid rgb(236, 236, 236);
+        }
+
+        .write-article-content {
+            font-size: 16px;
+            color: black;
+            height: 300px;
+            border-bottom: 1px solid rgb(236, 236, 236);
+        }
+
+        .write-article-input-file-label>div {
+            display: inline-block;
+            position: relative;
+            width: 150px;
+            height: 100px;
+            border: 1px dashed rgb(133, 144, 166);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .write-article-input-file-label>div::after {
+            content: "+上传图片";
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+        }
+
+        .write-article-input-file-label>div::before {
+            content: "(单击图片可取消上传)";
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+        }
+
+        .write-article-input-file-label>div:hover::after {
+            color: rgb(133, 144, 166);
+        }
+
+        .write-article-input-file-label>div:hover::before {
+            color: rgb(133, 144, 166);
+        }
+
+        .write-article-input-file-picture-preview>img {
+            width: 150px;
+            border-radius: 4px;
+            padding: 1px;
+            border: 1px dashed rgb(133, 144, 166);
+            cursor: pointer;
+        }
+
+        .write-article-input-file-picture-preview>img:hover {
+            background-color: black;
+            opacity: 0.5;
+        }
+
+        .write-article-submit {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 3.6rem;
+            width: 22rem;
+            background-color: rgb(5, 109, 232);
+            cursor: pointer;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid #c8cccf;
+            margin: 20px 0px 30px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="write-article">
+        <h1>写文章</h1>
+        <form action="">
+            <textarea cols="30" rows="1" placeholder="（这个是写文章哟~）请输入标题（最多20个字）" class="write-article-title"
+                required></textarea>
+            <textarea cols="30" rows="10" placeholder="请输入内容" class="write-article-content" required></textarea>
+            <label for="write-article-input-file" class="write-article-input-file-label">
+                <div></div>
+            </label>
+            <span class="write-article-input-file-picture-preview"> </span>
+            <input type="file" accept=".jpeg, .jpg, .png" id="write-article-input-file" class="write-article-input-file"
+                style="display: none;">
+            <div style="width: 100%;border-bottom: 1px dashed rgb(133, 144, 166);"></div>
+            <input type="submit" name="" id="" class="write-article-submit">
+        </form>
+    </div>
+
+</body>
+<script>
+    window.addEventListener('load', function () {
+
+        // 禁止鼠标选中
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        })
+
+        let write_article_input_file = document.querySelector('.write-article-input-file');
+        let write_article_input_file_label = document.querySelector('.write-article-input-file-label');
+        let write_article_input_file_picture_preview = document.querySelector('.write-article-input-file-picture-preview');
+        let write_article_input_file_picture_preview_list;
+
+
+        function create_img(url) {
+            // 转移为字符串
+            url = url.toString();
+            let img = document.createElement("img");
+            img.src = url;
+            write_article_input_file_picture_preview.appendChild(img);
+        }
+
+        // 计算图片元素
+        function detection_img() {
+            write_article_input_file_picture_preview_list = document.querySelectorAll('img');
+        }
+        // 预览并计算图片元素
+        write_article_input_file.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            const reader = new FileReader(); // 创建FileReader对象(文件对象)
+            console.log(reader);
+            reader.readAsDataURL(file);
+            reader.onload = (e) => {
+                // 添加进去
+                create_img(e.target.result);
+                // 重新赋值图片列表
+                detection_img()
+                // 删除效果
+                for (let i = 0; i < write_article_input_file_picture_preview_list.length; i++) {
+                    write_article_input_file_picture_preview_list[i].addEventListener('click', function () {
+                        this.remove()
+                    })
+                }
+            };
+        })
+
+
+
+    });
+
+</script>
+
+</html>

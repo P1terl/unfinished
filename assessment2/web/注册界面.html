@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册界面</title>
+
+    <link rel="shortcut icon" href="../static/图片/知乎icon.ico" />
+
+    <link rel="stylesheet" href="/static/头像选择.css">
+
+    <link rel="stylesheet" href="/static/注册界面.css">
+    
+    <script src="/static/注册界面.js"></script>
+    <script src="/static/测试.js"></script>
+
+</head>
+
+<body>
+    <!-- 头像选择 -->
+    <div class="picture-chose-big-box">
+        <h2 class="picture-chose-h2 picture-h2-before-animation" >请选择你的头像</h2>
+        <br>
+        <div class="picture-chose-small-box">
+            <img class="picture-chose-img picture-chose-img-before-left-animation" src="/图片/白羊座.png" alt="">
+            <img class="picture-chose-img picture-chose-img-before-left-animation" src="/图片/金牛座.png" alt="">
+            <img class="picture-chose-img picture-chose-img-before-right-animation" src="/图片/双子座.png" alt="">
+            <img class="picture-chose-img picture-chose-img-before-right-animation" src="/图片/巨蟹座.png" alt="">
+        </div>
+        <div class="picture-chose-small-box">
+            <img class="picture-chose-img picture-chose-img-before-left-animation" src="/图片/狮子座.png" alt="">
+            <img class="picture-chose-img picture-chose-img-before-left-animation" src="/图片/处女座.png" alt="">
+            <img class="picture-chose-img picture-chose-img-before-right-animation" src="/图片/天秤座.png" alt="">
+            <img class="picture-chose-img picture-chose-img-before-right-animation" src="/图片/天蝎座.png" alt="">
+        </div>
+        <div class="picture-chose-small-box">
+            <img class="picture-chose-img picture-chose-img-before-left-animation" src="/图片/射手座.png" alt="">
+            <img class="picture-chose-img picture-chose-img-before-left-animation" src="/图片/摩羯座.png" alt="">
+            <img class="picture-chose-img picture-chose-img-before-right-animation" src="/图片/水瓶座.png" alt="">
+            <img class="picture-chose-img picture-chose-img-before-right-animation" src="/图片/双鱼座.png" alt="">
+        </div>
+        <br>
+        <div><button class="picture-chose-button picture-chose-button-before-animation">确定</button></div>
+    </div>
+
+
+    <!-- 注册界面 -->
+    <div class="register-picture-chose-img-box ">
+        <img class="register-picture-chose-img-back" src="/图片/上一步.png" alt="">
+
+        <img class="register-picture-chose-img register-picture-chose-img-before-animation" alt="">
+    </div>
+    <div class="register-big-box">
+        <div class="register-title register-title-before-animation">注册</div>
+        
+        <form action="/api/v1/user/register" method="post">
+                <div class="register-input register-input-left-before-animation">
+                    <label for="register-usernumber">账号捏~：</label>
+                    <input type="text" placeholder="请设置账号（不少于6位）" id="register-usernumber" class="register-usernumber" required
+                        autocomplete="off">
+                </div>
+                <div class="register-input register-input-right-before-animation">
+                    <label for="password">密码捏~：</label>
+                    <input type="password" placeholder="请设置密码（不少于6位）" id="register-password" class="register-password" required
+                        autocomplete="off">
+                </div>
+                <!-- 邮箱 -->
+                <div class="register-input register-input-left-before-animation">
+                    <label for="register-mail-number">邮箱号~：</label>
+                    <input type="email" placeholder="请输入注册邮箱号" id="register-mail-number" class="register-mail-number" required
+                        autocomplete="off">
+                        <input type="submit" class="register-mail-number-submit" value="发送验证码">
+                </div>
+                <!-- 验证码 -->
+                <div class="register-input register-input-right-before-animation">
+                    <label for="register-security-code">验证码~：</label>
+                    <input type="text" placeholder="请输入邮箱验证码" id="register-security-code" class="register-security-code" required
+                        autocomplete="off">
+                </div>
+                <!-- 注册的头像 -->
+                <input type="text" class="register-img" style="position: absolute;top: 1px;visibility: hidden;">
+                <div class="register-input register-checkbox register-checkbox-before-animation">
+                    <div class="register-input-read-agree">登录即代表已阅读并同意<a href="Javascript:;">《用户守则》</a></div> 
+                    <br><br>
+                    <input type="submit" value="注册" id="register-button-submit" class="register-button-submit">
+                </div>
+        </form>
+
+    </div>
+
+    <!-- 注册完成 -->
+    <div class="register-complete-big-box register-complete-big-box-before-animation">
+        <h1 class="register-complete-h1 register-complete-h1-before-animation">恭喜您完成注册</h1>
+        <div class="register-complete-small-box">
+            <button class="register-complete-return-button">返回首页</button>
+
+            <div class="register-complete-automatic-return register-complete-automatic-return-before-animation">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
